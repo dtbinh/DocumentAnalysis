@@ -23,5 +23,5 @@ project to help the social scientist to re-use the qualitative data for their se
 The web application helps the researcher to analysis qualitative digital archive using quote, code, annotation, comments etc. so that it can re-use the important information for secondary research. 
 This application developed by JSF, Primefaces, Hibernate, JavaScript, XML, JAXB, REST (Jersey/JAX-RS), Stanford CoreNLP, Netbeans IDE and MySQL. You can see the project here http://greymane.l3s.uni-hannover.de:8089/DocumentAnalysis/
 
-This project later integrated with main Maven projecct using SVN and Eclipse IDE.
+This project later integrated with main Maven project using SVN and Eclipse IDE.
 It is a part of "GuteArbeit" (https://www.l3s.de/gute-arbeit) project at L3S. 
