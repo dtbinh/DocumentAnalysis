@@ -1,7 +1,6 @@
 
 #Welcome to Document Annotation, Analysis and Enrichment in Qualitative Data Archives 
 
-Description:
 
 A tremendous body of data has been collected and archived in the social sciences by observing
 or interviewing people regarding their behavior, work ethics, attitudes, beliefs, etc. These
