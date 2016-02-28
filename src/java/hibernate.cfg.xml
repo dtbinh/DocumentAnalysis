@@ -4,13 +4,13 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://mysql.l3s.uni-hannover.de/workive?characterEncoding=utf8</property>
-    <property name="hibernate.connection.username">workive</property>
+    <property name="hibernate.connection.url"></property>
+    <property name="hibernate.connection.username"></property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <property name="hibernate.connection.password">cU45EwGjwXaycU96</property>
+    <property name="hibernate.connection.password"></property>
     <mapping class="de.l3s.workive.analysis.entities.Annotate"/>
     <mapping class="de.l3s.workive.analysis.entities.Code"/>
     <mapping class="de.l3s.workive.analysis.entities.CodedText"/>
