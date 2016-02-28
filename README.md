@@ -16,7 +16,7 @@ The goal of this project is to enable intelligent access to such qualitative dat
 diverse sociological studies regarding the workplace. The analysis of the content of social
 sciences has been an important concern. This kind of analysis typically relies on coding of the
 text, annotating or gives comments on the text, and this can limits the sizes of the corpora that
-can be analyzed for secondary research. Such kind of analysis tool has been developed in this
+can be analyzed for secondary research. Such kind of analysis tool developed in this
 project to help the social scientist to re-use the qualitative data for their secondary research.
 
 The web application helps the researcher to analysis qualitative digital archive using quote, code, annotation, comments etc. so that it can re-use the important information for secondary research. 
