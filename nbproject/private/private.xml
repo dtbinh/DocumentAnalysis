@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/ner/nerLocation.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/dao/CodedTextDao.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/view/activeUserCheckbox.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/ner/nerOrganization.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/dao/NERDao.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/view/annotate.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/login.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/index.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/DocumentBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/dao/QuoteDao.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/js/analysis.js</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/view/nerCheckboxes.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/view/comment.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/AnnotationBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/ner/GermanNER.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/CommentBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/dao/CommentDao.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/view/quote.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/datatable/codeDataTable.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/util/HibernateUtil.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/NERBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/datatable/commentDataTable.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/UserBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/CodedTextBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/EditorBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/save/codeComponent.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/CodeBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/view/activeCheckbox.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/editor.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/LoginBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/datatable/annotateDataTable.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/dao/AnnotationDao.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/view/code.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/QuoteBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/save/annotateSave.xhtml</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/src/java/de/l3s/workive/analysis/beans/SessionBean.java</file>
+            <file>file:/E:/Java%20Program/DocumentAnalysis/web/pages/save/commentSave.xhtml</file>
+        </group>
+    </open-files>
+</project-private>

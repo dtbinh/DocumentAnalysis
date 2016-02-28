@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Checkboxes to display annotations</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="checkboxes">
+            
+                <p:panelGrid columns="2" columnClasses="no-border, no-border">
+                    <p:column>
+                        <p:selectBooleanCheckbox style="background: chocolate;" value="#{codedTextBean.checkBoxActivate}">
+                             <p:ajax update=":listform"/>
+                         </p:selectBooleanCheckbox>
+
+                         <p:spacer width="10" height="5" />
+                         <p:commandLink  id="selectButtonc"  onclick="codedTextList.show()">  
+                             <h:outputText style="color: chocolate;" value="Code" />
+                         </p:commandLink> 
+
+                    </p:column>
+                    <p:column>
+                        <p:selectBooleanCheckbox style="background: blueviolet; " value="#{quoteBean.checkBoxActivate}" >
+
+                            <p:ajax update=":listform"/>
+                        </p:selectBooleanCheckbox> 
+
+
+                         <p:spacer width="10" height="5" />
+                          <p:commandLink  id="selectButtonq"  onclick="quotedTextList.show()">  
+                              <h:outputText style="color: blueviolet; " value="Quote" />
+                         </p:commandLink> 
+
+                     </p:column>  
+                    <p:column>
+                        <p:selectBooleanCheckbox style="background: #0b93d5; " value="#{annotationBean.checkBoxActivate}">
+                             <p:ajax update=":listform"/>
+                         </p:selectBooleanCheckbox>
+                         <p:spacer width="10" height="5" />
+                         <p:commandLink  id="selectButtona"  onclick="annotatedTextList.show()">  
+                             <h:outputText style="color: #0b93d5; " value="Annotate" />
+                         </p:commandLink> 
+
+                     </p:column>    
+                    <p:column>
+
+                        <p:selectBooleanCheckbox style="background:  brown; " value="#{commentBean.checkBoxActivate}">
+                             <p:ajax update=":listform"/>
+                         </p:selectBooleanCheckbox>
+
+                         <p:spacer width="10" height="5" />
+                         <p:commandLink  id="selectButtonx"  onclick="commentedTextList.show()">  
+                             <h:outputText style="color: brown; " value="Comment" />
+                         </p:commandLink> 
+                     </p:column>  
+                   
+                </p:panelGrid>
+                
+              
+
+            
+        </ui:component>     
+    </h:body>
+</html>

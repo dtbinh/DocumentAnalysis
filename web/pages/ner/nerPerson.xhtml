@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>NERPersonList</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="persionList">
+          
+            <table id="nerpersoncolor" style='opacity:1.0;'>
+                <ui:repeat var="person" value="#{nerBean.personEntities}" varStatus="status1">
+                    <tr>
+                        <td style="width: 230px;">
+                            <a id="#{person[0]}" name="itempersonner" onclick="SavedIds('#{person[2]}','personner','#{person[0]}','#{person[4]}')">
+                                <h:outputText id="personnerfade"  value="#{person[1]}" />
+                                 
+                             </a> 
+                        </td>
+                       
+                   </tr>
+                    
+                </ui:repeat>
+            </table>    
+        </ui:component>     
+    </h:body>
+</html>

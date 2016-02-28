@@ -1,0 +1,73 @@
+
+<html>
+<head>
+<script type="text/javascript">
+
+document.getElementById('text-shown').addEventListener('click', function(e){
+    //var toggleFunc = this.checked ? 'add' : 'remove';
+    //document.getElementById('pdf').classList[toggleFunc]('text-shown');
+    document.getElementById('pdf').className = this.checked ? 'text-shown' : '';
+}, false);
+</script>
+
+<style type="text/css">
+	#pdf {
+		position: relative;
+	}
+	#pdf .text {
+		position: absolute;
+		color: rgba(0,0,0,0.0);
+		line-height: 1em;
+	}
+	#pdf.text-shown .text {
+		text-stroke: 1px red;
+		-webkit-text-stroke: 1px red;
+		color: rgba(0,0,255,0.5);
+	}
+	#text1 {
+		font-family: serif;
+		font-size: 67px;
+		left: 6px;
+		top: 0px;
+	}
+	#text2 {
+		font-family: monospace;
+		font-size: 63px;
+		left: 7px;
+		top: 60px;
+	}
+
+
+	/* end */
+
+	p {
+		margin-top:1em;
+		margin-bottom:1em;
+	}
+
+	footer {
+		display:block;
+		margin-top:2em;
+		border-top:solid 1px gray;
+		padding-top:0.5em;
+		font-size:smaller;
+		font-style:italic;
+	}
+
+</style>
+
+</head>
+<body>
+<p>Prototype for selectable/findable text in <a href="C:/Users/Khaled/Desktop/test/pdf.js" target=_top>pdf.js</a> (see <a href="https://github.com/andreasgal/pdf.js/issues/10" target=_top>issue 10</a>). You can select the text in the image below because there is transparent text positioned above it:</p>
+
+<div id="pdf" >
+    <img id=canvas src="C:/Users/Khaled/Desktop/test/00000003-0.jpg">
+    <span id='text1' class=text>Proportional</span>
+    <span id='text2' class=text>Feeafadfsdfsadfas</span>
+</div>
+
+<p><input type=checkbox id='text-shown'> <label for=text-shown>Reveal selectable text</label></p>
+
+
+</body>
+</html>

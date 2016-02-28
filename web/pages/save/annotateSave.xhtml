@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>commentDatatable</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="annotationCommponent">
+             <h:form id="anotateButtonform">
+                <p:commandButton onclick="annotate.show()"  value="Annotate" style="width:195px;height:30px; background-color: #0b93d5; color: white;"  icon="ui-icon-tag"   />                        
+           </h:form> 
+             <p:dialog header="Annotate" widgetVar="annotate" resizable="false">
+                <h:form id="annotateform">
+                        <p:panelGrid columns="2" style="margin-bottom:10px">  
+                            <p:outputLabel for="annotatetext" value="Annotate Text:" />
+                            <p:inputText id="annotatetext" value="#{annotationBean.annotatedText}" />          
+                        </p:panelGrid>
+                        <h:inputHidden id="selectedtext" value="#{annotationBean.selectedText}" />
+                        <h:inputHidden id="annotateselecteddiv" value="#{annotationBean.annotatedDivId}" />
+                        <h:inputHidden id="annotatepageid" value="#{annotationBean.pageid}" />
+                        <p:commandButton onclick="selectedSenteces()" id="submitButton"  action="#{annotationBean.saveAnnotation()}" value="Save" update=":editorform :listform :listCheckBox:annotatedData" oncomplete="annotate.hide();"/>
+                </h:form> 
+            </p:dialog>            
+        </ui:component>     
+    </h:body>
+</html>

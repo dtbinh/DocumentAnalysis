@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Checkboxes to display All or Only user annotations</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="checkboxes">
+            
+                <p:panelGrid columns="2" columnClasses="no-border, no-border">
+                    <p:column>
+                        <p:selectBooleanCheckbox style="background: gray;" value="#{userBean.activeUser}">
+                            <p:ajax update=":listform" listener="#{userBean.activatedDisplayedUserValue()}"/>
+                         </p:selectBooleanCheckbox>
+
+                         <p:spacer width="10" height="5" />
+                         
+                             <h:outputText style="color: gray;" value="Display All" />
+                        
+
+                    </p:column>
+                    
+                </p:panelGrid>
+             
+        </ui:component>     
+    </h:body>
+</html>

@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+          
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<f:view contentType="text/html">    
+    <h:head>
+        <title>Analysis Tool - GuteArbeit Project</title>
+       <f:facet name="first">
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            
+            <script type="text/javascript" src="js/analysis.js"></script>
+            <h:outputStylesheet library="css" name="default.css"  />
+            <script src="js/jquery-1.js"></script>
+            <script src="js/pie.js"></script>
+            <script type="text/javascript" src="js/naviscript.js"></script>
+            <script type="text/javascript" src="js/jssearch.js"></script>
+            <link rel="shortcut icon" href="resources/icon/favicon.ico" />
+            
+            
+       </f:facet>    
+
+    </h:head>
+    <h:body>
+
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north"   size="60" resizable="false" closable="false" collapsible="false" >
+                
+                <p:panelGrid columns="3" style="border-style: hidden;">
+                    <h:form id="menu">
+                        <h:outputLink value="#{documentBean.documentMenu()}" >
+                            Documents
+                        </h:outputLink>	
+                    </h:form>    
+                    <h:form id="welcome">
+                        Welcome #{editorBean.username} 
+                    </h:form>
+                    <h:form id="logout">
+                           
+                        <h:commandLink action="#{loginBean.logout}" value="Logout"></h:commandLink>  
+                    </h:form>     
+                </p:panelGrid>    
+             </p:layoutUnit>
+
+            <p:layoutUnit  position="east" size="27%" resizable="false" closable="false" collapsible="false"
+                        id="right_pane" style="border: none">
+               
+                <p:panelGrid columns="3" style="border-style: hidden; width:300px;  height: 30px; ">
+                     <p:messages globalOnly="true" autoUpdate="true" />
+                </p:panelGrid>
+                <h:form id="activeUserform" >   
+                    <ui:include src="pages/view/activeUserCheckbox.xhtml"/>
+                 </h:form>    
+                <div style="width:300px;height:300px;overflow-x: hidden;overflow-y: scroll; ">
+                    <h:form id="listform" >    
+                        <c:if test="${codedTextBean.checkBoxActivate==true}"> 
+                            <ui:include src="pages/view/code.xhtml"/>
+                        </c:if>
+                        <c:if test="${annotationBean.checkBoxActivate==true}"> 
+                            <ui:include src="pages/view/annotate.xhtml"/>
+                        </c:if>
+                        <c:if test="${commentBean.checkBoxActivate==true}"> 
+                            <ui:include src="pages/view/comment.xhtml"/>
+                        </c:if>
+                        <c:if test="${quoteBean.checkBoxActivate==true}"> 
+                             <ui:include src="pages/view/quote.xhtml"/>
+                        </c:if>
+                     </h:form>
+                </div>    
+                <p:spacer width="30" height="3" />
+                
+                <div  style="width:300px;height:300px;overflow-x: hidden;overflow-y: scroll; ">
+                    
+                    
+                    <h:form id="nerform" >    
+                        
+                        <c:if test="${neran.checkBoxPersonActivate==true}"> 
+                            <ui:include src="pages/ner/nerPerson.xhtml"/>
+                        </c:if>
+                    
+                      
+                        <c:if test="${nerBean.checkBoxLocationActivate==true}"> 
+                            <ui:include src="pages/ner/nerLocation.xhtml"/>
+                        </c:if>
+                   
+                    
+                        <c:if test="${nerBean.checkBoxOrganizationActivate==true}"> 
+                            <ui:include src="pages/ner/nerOrganization.xhtml"/>
+                        </c:if>
+                      
+                     </h:form>
+                </div>    
+                 
+            </p:layoutUnit>
+            <p:layoutUnit position="center"   style="border-bottom: none;border-top: none">
+                  <div align="center" >
+                        <h:form id="hiddenform" >
+                            <p:commandButton style="display:none"  global="false" id="pageButton"  update=":editorform :listform :nerform " />               
+                        </h:form>
+                        <p:panelGrid columns="3" style="border-style: hidden;">  
+                            
+                            <h:form id="pagePrevButtonForm" >
+                                <p:remoteCommand global="false" name="rup"  oncomplete="$('#hiddenform\\:pageButton').click()"  actionListener="#{editorBean.prevPage()}" />
+                                <p:commandButton id="reloadUp" type="button"  style="width: 50px;" onclick="rup()" icon="ui-icon-seek-prev" />
+                            </h:form>    
+                            <h:form id="pageNextButtonForm" >
+                                <p:remoteCommand global="false" name="rdown" oncomplete="$('#hiddenform\\:pageButton').click()"  actionListener="#{editorBean.nextPage()}" />
+                                <p:commandButton id="reloadDown" type="button" style="width: 50px;" onclick="rdown()" icon="ui-icon-seek-next" />
+                            </h:form>
+                            <h:form id="pageSelectButtonForm" >
+                                <p:selectOneMenu id="pagemenu" style="width: 50px;" value="#{editorBean.loadedPage}"
+                                    valueChangeListener="#{editorBean.selectedPage()}">
+                                    <f:selectItem itemLabel="" itemValue=""/>     
+                                    <f:selectItems value="#{editorBean.getPageList()}" /> 
+                                    <p:ajax event="change" onsuccess="$('#hiddenform\\:pageButton').click()"/>
+                                </p:selectOneMenu>
+                            </h:form>    
+                        </p:panelGrid>
+                    </div>
+                 
+                <p:spacer width="30" height="1" />
+                    
+                <h:form id="editorform" >
+                    
+                    <ui:include src="editor.xhtml"/>
+                </h:form>
+                
+            </p:layoutUnit>
+            <p:layoutUnit id="left_pane" position="west" size="17%" style="border: none;"  resizable="false" closable="false" collapsible="false">
+                    
+                    <ui:include src="pages/save/codeComponent.xhtml"/>
+                    <ui:include src="pages/save/quoteSave.xhtml"/>
+                    <ui:include src="pages/save/annotateSave.xhtml"/>
+                    <ui:include src="pages/save/commentSave.xhtml"/> 
+                    <p:spacer width="30" height="1" />
+                    <h:form id="listCheckBox">
+                       <ui:include src="pages/view/activeCheckbox.xhtml"/> 
+                        
+                        <ui:include src="pages/datatable/codeDataTable.xhtml"/> 
+                        <ui:include src="pages/datatable/quoteDataTable.xhtml"/> 
+                        <ui:include src="pages/datatable/annotateDataTable.xhtml"/> 
+                        <ui:include src="pages/datatable/commentDataTable.xhtml"/> 
+                    </h:form>
+                    <p:spacer width="30" height="1" />
+                    <h:form id="loadNerForm" >
+                        <c:if test="${editorBean.nerExtraction==true}">
+                            <p:remoteCommand global="false" name="loadner"  update=":loadNerForm" />
+                            <p:commandButton  id="nerButton" oncomplete="loadner()" onclick="deactivateNERButton()" value="Load Named Entities" style="width:195px;height:30px; background-color: green; color: white;" action="#{editorBean.loadEntities()}" />
+                            <h:graphicImage id="image" value="resources/images/ajaxloadingbar.gif" style="display:none;"></h:graphicImage>
+
+                        </c:if>
+                        <c:if test="${editorBean.nerExtraction==false}">
+                            <ui:include src="pages/view/nerCheckboxes.xhtml"/>
+                        </c:if>
+                        
+                         
+                         
+                    </h:form>  
+                 
+                      
+            </p:layoutUnit>
+        </p:layout>    
+    </h:body>
+</f:view>
+</html>

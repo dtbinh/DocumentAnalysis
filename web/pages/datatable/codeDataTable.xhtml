@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>CodeList</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="codeDataTable">
+            <p:dialog header="Coded Texts" widgetVar="codedTextList" resizable="false">
+                <p:dataTable id="codedData" style="width: 700px; height: 450px" var="code" value="#{codedTextBean.getCodedTextList()}"
+                             paginator="true" rows="10"> 
+                      
+                        <p:column headerText="Code Name" style="width:10%">
+                            <h:outputText value="#{code[1]}" />
+                        </p:column>
+
+                        <p:column headerText="Coded Text"  style="white-space : normal ;  width:20%">
+                            <h:outputText value="#{code[2]}" />
+                        </p:column>
+
+                        <p:column headerText="Author" style="width:10%">
+                            <h:outputText value="#{code[6]}" />
+                        </p:column>
+                        <p:column headerText="Created" style="width:10%">
+                            <h:outputText value="#{code[5]}" />
+                        </p:column>
+
+                </p:dataTable>
+            </p:dialog>    
+        </ui:component>     
+    </h:body>
+</html>

@@ -1,0 +1,238 @@
+.ui-widget, .ui-widget .ui-widget {
+    font-size: 12px !important;
+ }
+ 
+.ui-datatable .ui-button{
+    float: left;
+ }
+ 
+.admin-dashboard-button{
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+ }
+ .userDataTableStyle{
+    margin-left:  5px;
+    margin-right: 5px;
+    margin-top: 0;
+ }
+ 
+ .loginPanelStyle{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 15%;
+ }
+
+ .userFormStyle{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+ }
+ 
+ .ui-selectmanymenu{
+    width: 100% !important; 
+    overflow: hidden !important;
+ }
+.place-holder {position: relative;}
+.quote-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#quote-place { position:absolute;  }
+
+.Highlight {
+    background-color:#0F0;
+}
+
+#markerLeft, #markerRight {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	display: none;
+}
+#markerLeft {
+	background: #F00;
+}
+#markerRight {
+	background: #00F;
+}
+#selection_1, #selection_2, #selection_3 {
+    background: red;
+    position: absolute;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    border: 1px solid red;
+    background: #dff;
+    margin: -1px;
+    z-index: -1;
+}
+#Content .selected { background: #ff9; }
+#anotatecolor{
+    color:#0b93d5;
+}
+#anotatecolor a{
+    font: 13px Verdana;
+    padding: 2px;
+    padding-left: 4px;
+    display: block;
+    width: 100%;
+    color: #0b93d5;
+    text-decoration: none;
+    
+}
+#anotatecolor a:hover{
+    background-color: #0b93d5;
+    color: white;
+    font:  13px Verdana;
+}
+#commentcolor{
+    color:brown;
+}
+#commentcolor a{
+    font: 13px Verdana;
+    padding: 2px;
+    padding-left: 4px;
+    display: block;
+    width: 100%;
+    color: brown;
+    text-decoration: none;
+    
+}
+#commentcolor a:hover{
+    background-color: brown;
+    color: white;
+    font: 13px Verdana;
+}
+#quotecolor{
+    color:blueviolet;
+}
+#quotecolor a{
+    font: 13px Verdana;
+    padding: 2px;
+    padding-left: 4px;
+    display: block;
+    width: 100%;
+    color: blueviolet;
+    text-decoration: none;
+    
+}
+#quotecolor a:hover{
+    background-color: blueviolet;
+    color: white;
+    font:  13px Verdana;
+}
+#linkcolor a:hover{
+    background-color: green;
+    color: white;
+    font:  13px Verdana;
+}
+#linkcolor{
+    color:green;
+}
+#linkcolor a{
+    font: 13px Verdana;
+    padding: 2px;
+    padding-left: 4px;
+    display: block;
+    width: 100%;
+    color: green;
+    text-decoration: none;
+    
+}
+#linkcolor a:hover{
+    background-color: green;
+    color: white;
+    font: 13px Verdana;
+}
+
+
+
+#codecolor a:hover{
+    background-color: chocolate;
+    color: white;
+    font: 13px Verdana;
+}
+#codecolor{
+    color:chocolate;
+}
+#codecolor a{
+    font: 13px Verdana;
+    padding: 2px;
+    padding-left: 4px;
+    display: block;
+    width: 100%;
+    color: chocolate;
+    text-decoration: none;
+    
+}
+#codecolor a:hover{
+    background-color: chocolate;
+    color: white;
+    font: 13px Verdana;
+}
+#nercolor a:hover{
+    background-color:orange;
+    color: yellow;
+    font: 13px Verdana;
+}
+#nercolor{
+    color:navy;
+}
+#nercolor a{
+    font: 12px Verdana;
+    padding: 2px;
+    padding-left: 4px;
+    display: block;
+    width: 100%;
+    color:navy;
+    text-decoration: none;
+    
+}
+
+#wordolor{
+    color:navy;
+}
+#wordolor a{
+    font: 13px Verdana;
+    padding: 2px;
+    padding-left: 4px;
+    display: block;
+    width: 100%;
+    color: green;
+    text-decoration: none;
+    
+}
+#wordolor a:hover{
+    background-color: green;
+    color: white;
+    font: 13px Verdana;
+}
+
+.sentences .selected { 
+    background: #ff9; 
+    opacity:0.5;
+}
+.column1 {
+    width: 50%;
+    text-align: left;
+}
+.column2 {
+    width: 30%;
+    text-align: right;
+}
+.column3 {
+    width: 60%;
+    text-align: left;
+}
+.myTableClass>tbody>tr { 
+    background: pink;
+}
+
+.myTableClass>tbody>tr:hover { 
+    background: purple; 
+}

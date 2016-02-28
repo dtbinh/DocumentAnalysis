@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>NEROrganizationList</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="organizationList">
+            
+            <table id="nerOrgcolor" style='opacity:1.0;'>
+                <ui:repeat var="organization" value="#{nerBean.organizationEntities}" varStatus="status1">
+                    <tr>
+                        <td style="width: 230px;">
+                            <a id="#{organization[0]}" name="itemorganizationner" onclick="SavedIds('#{organization[2]}','organization','#{organization[0]}','#{organization[4]}')">
+                                <h:outputText id="organizationnerfade"  value="#{organization[1]}" />
+                                 
+                             </a> 
+                        </td>
+                       
+                   </tr>
+                    
+                </ui:repeat>
+            </table>    
+        </ui:component>     
+    </h:body>
+</html>

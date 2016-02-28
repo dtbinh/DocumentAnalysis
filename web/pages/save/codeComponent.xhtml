@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>CodeSave</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="codeCommponent">
+            <h:form id="codeform">
+                <p:menu style="width: 185px">
+                   <p:menuitem value="Free Code"   onclick="freecode.show()" icon="ui-icon-arrow-1-ne"/>
+                    <p:menuitem value="Manages Code" onclick="managecode.show()" icon="ui-icon-arrow-1-ne" />                            
+                </p:menu> 
+            </h:form>
+            <h:form id="codeSelectionForm">                          
+                <h:panelGroup id="allCodeList">
+                    <p:panelGrid columns="1"  >
+                        <p:outputLabel value="Code From List" style="color: " for="codetest1" />  
+                        <p:selectOneMenu id="codetest1" style="width: 170px;" value="#{codedTextBean.codededText}"
+                                         valueChangeListener="#{codedTextBean.codeNameChangeListener}">
+                                      <f:selectItem itemLabel="" itemValue=""/>            
+                                      <f:selectItems value="#{codedTextBean.getCodeNameList()}" /> 
+                                       <p:ajax event="change" update=":codeButtonform:codebutton :managescodeform"/>
+                        </p:selectOneMenu>
+
+                    </p:panelGrid>
+
+               </h:panelGroup>      
+            </h:form>   
+             <h:form id="codeButtonform">        
+                <h:panelGroup id="codelistshow">
+                    <h:inputHidden id="codepageid" value="#{codedTextBean.pageid}" />
+                    <h:inputHidden id="codeselectedtext" value="#{codedTextBean.selectedText}" />
+                    <h:inputHidden id="codeselecteddiv" value="#{codedTextBean.codedDivId}" />
+                    <p:commandButton id="codebutton" value="Code with: + #{codedTextBean.codededText}"  
+                                     onclick="selectedSenteces()"  action="#{codedTextBean.saveCodedText()}" 
+                                  update=":editorform :listform :listCheckBox"  
+                                  style="width:195px;height:30px; background: chocolate; color: white;"  
+                                 icon="ui-icon-arrow-1-ne"  />
+               </h:panelGroup>   
+            </h:form>  
+            <p:dialog header="Free Code" widgetVar="freecode" resizable="false">
+                <h:form id="freecodeform">
+                    <h:panelGroup id="code">
+                        <p:panelGrid id="codetext" columns="2" style="margin-bottom:10px">
+                             <p:outputLabel for="freecode" value="Free Code" />
+                             <p:inputText id="freecode" value="#{codeBean.codename}" />
+                        </p:panelGrid>
+                    </h:panelGroup>      
+                    <p:commandButton id="feecodebutton"  action="#{codeBean.saveCodeName()}" value="Save" update=":codeSelectionForm:allCodeList :managescodeform:codeid" oncomplete="freecode.hide();"/> 
+                </h:form> 
+            </p:dialog>  
+            
+            <p:dialog header="Manages Code" width="850"   widgetVar="managecode"  resizable="true">
+                <h:form id="managescodeform">
+                    
+                    <p:dataTable id="codeid" var="code" filteredValue="#{codedTextBean.filteredCode}" value="#{codedTextBean.getCode()}" rows="5" paginator="true" editable="true" style="margin-bottom:20px">
+                        <f:facet name="header">
+                            Code Name Editing
+                        </f:facet>
+
+                        <p:ajax event="rowEdit" listener="#{codedTextBean.onCodeEdit}" update=":managescodeform:codeid" />
+                        <p:ajax event="rowEditCancel" listener="#{codedTextBean.onCodeCancel}"  />
+                   
+                                
+                        <p:column headerText="Code Name" style="width:20%" filterBy="#{code.codename}" filterMatchMode="contains">
+                             <p:cellEditor>
+                                 <f:facet name="output"><h:outputText value="#{code.codename}" /></f:facet>
+                                 <f:facet name="input"><p:inputText id="modelInput" value="#{code.codename}" style="width:100%"/></f:facet>
+                             </p:cellEditor>
+                         </p:column>
+
+                        <p:column headerText="Author" style="width:20%" filterBy="#{code.author}" filterMatchMode="contains" >
+
+                            <h:outputText value="#{code.author}" />
+
+                        </p:column>
+                  
+                        <p:column headerText="Created" style="width:20%" filterBy="#{code.created}" filterMatchMode="contains" >
+                                <h:outputText value="#{code.created}" >
+                                    <f:convertDateTime pattern="yyyy-mm-dd" />
+                                </h:outputText>
+
+
+                        </p:column>
+                    <p:column headerText="Edit" style="width:20%">
+                        <p:rowEditor rendered="${code.author == sessionScope['username']}" />
+                    </p:column>
+                </p:dataTable>                        
+                </h:form>
+            </p:dialog>
+                   
+            
+        </ui:component>     
+    </h:body>
+</html>

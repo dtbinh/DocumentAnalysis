@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      >
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                 <h:outputStylesheet library="css" name="default.css"  />
+                <link rel="stylesheet" type="text/css" href="resources/css/login.css" />
+                <title>Document Analysis</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <div class="info">
+		<div  style="position: relative; max-width: 550px; height: 15%; max-height: 30%; 
+				top: 20px; margin-left: auto; margin-right: auto; text-align: justify;
+				margin-bottom:30px;">
+                    <h:outputText value="Welcome to Document Annotation, Analysis and Enrichment"
+					style="font-weight: bold; font-family: sans-serif;font-size:15px;display:inline-block; "></h:outputText>
+                    <h:outputText value="in Qualitative Data Archives"
+					style="font-weight: bold; font-family: sans-serif;font-size:15px;display:inline-block; "></h:outputText>
+                                     
+                    <br></br> <br></br>
+                    <h:outputText value="#{msg.homepage}"
+                            style="font-family: sans-serif;font-size:medium; display:block; "></h:outputText>
+                    <br />
+                    <p:panel  header="Login" style="width: 500px; align-self: center;" >
+                         
+                        <h:form>
+                            <h:panelGrid columns="3">
+                              
+                                <h:outputText value="Username" />
+                               <h:inputText id="username" value="#{loginBean.username}"></h:inputText>
+                               <h:message for="username"></h:message>
+
+                                <h:outputText value="Password" />
+                               <h:inputSecret id="password" value="#{loginBean.password}"></h:inputSecret>
+                               <h:message for="password"></h:message>
+                                <h:commandButton action="#{loginBean.userLogin}"
+                                   value="Login"></h:commandButton>
+                            </h:panelGrid>
+
+                        </h:form>
+                    </p:panel>
+                </div>
+            </div>                
+
+ 
+        </h:body>
+
+    </f:view>
+</html>
+

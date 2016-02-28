@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>NERLocationList</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="locationList">
+           
+            <table id="nerLoccolor" style='opacity:1.0;'>
+                <ui:repeat var="location" value="#{nerBean.locationEntities}" varStatus="status1">
+                    <tr>
+                        <td style="width: 230px;">
+                            <a id="#{location[0]}" name="itemlocationner" onclick="SavedIds('#{location[2]}','locationner','#{location[0]}','#{location[4]}')">
+                                <h:outputText id="locationfade"  value="#{location[1]}" />
+                                 
+                             </a> 
+                        </td>
+                       
+                   </tr>
+                    
+                </ui:repeat>
+            </table>    
+        </ui:component>     
+    </h:body>
+</html>

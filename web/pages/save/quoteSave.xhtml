@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>QouteSave</title>
+    </h:head>
+    <h:body>
+        <ui:component id="codeComponent">
+            
+            <h:form id="quoteform">
+                
+                <h:inputHidden id="selecteddiv" value="#{quoteBean.quotedDivId}" />
+                <h:inputHidden id="qselectedtext" value="#{quoteBean.quotedText}" />
+                <h:inputHidden id="quotepageid" value="#{quoteBean.pageid}" />
+                <p:commandButton  onclick="selectedSenteces()" value="Quote" style="width:195px;height:30px; background-color: blueviolet; color: white;" update=":editorform :listform :listCheckBox" action="#{quoteBean.saveQuote()}" icon="ui-icon-bookmark" />
+                        
+            </h:form>         
+        </ui:component>
+        
+    </h:body>
+</html>

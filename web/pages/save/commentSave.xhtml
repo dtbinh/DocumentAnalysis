@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>CommentSave</title>
+    </h:head>
+    <h:body>      
+        <ui:component id="commentCommponent">
+            <h:form id="commentButtonform">
+                        <p:commandButton onclick="comment.show()" value="Comment" style="width:195px;height:30px; background-color: brown; color: white;" icon="ui-icon-comment"   />
+            </h:form>   
+             <p:dialog header="Comment" widgetVar="comment" resizable="false">
+                <h:form id="commentform">
+                    <p:panelGrid columns="2" style="margin-bottom:10px">
+                        <p:outputLabel for="commenttext" value="Write Comment:" />
+                        <p:inputTextarea rows="6" cols="33" id="commenttext" value="#{commentBean.commentedText}" />
+                    </p:panelGrid>
+                    <h:inputHidden id="commentpageid" value="#{commentBean.pageid}" />
+                    <h:inputHidden id="cselectedtext" value="#{commentBean.selectedText}" />
+                    <h:inputHidden id="commentselecteddiv" value="#{commentBean.commentedDivId}" />
+                    <p:commandButton onclick="selectedSenteces()" id="submitButton"  action="#{commentBean.saveComment()}" value="Save" update=":editorform :listform :listCheckBox" oncomplete="comment.hide();"/>            
+                </h:form> 
+            </p:dialog>            
+        </ui:component>     
+    </h:body>
+</html>
