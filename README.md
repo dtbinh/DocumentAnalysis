@@ -15,11 +15,10 @@ secondary analysis has been very limited, especially in the social sciences.
 The goal of this project is to enable intelligent access to such qualitative data gathered within
 diverse sociological studies regarding the workplace. The analysis of the content of social
 sciences has been an important concern. This kind of analysis typically relies on coding of the
-text, annotating or gives comments on the text, and this can limits the sizes of the corpora that
+text, annotating or give comments on the text, and this can limits the sizes of the corpora that
 can be analyzed for secondary research. Such kind of analysis tool developed in this
-project to help the social scientist to re-use the qualitative data for their secondary research.
+project to help the social scientist to re-use the important qualitative data for their secondary research.
 
-The web application helps the researcher to analysis qualitative digital archive using quote, code, annotation, comments etc. so that it can re-use the important information for secondary research. 
 This application developed by JSF, Primefaces, Hibernate, JavaScript, XML, JAXB, REST (Jersey/JAX-RS), Stanford CoreNLP, Netbeans IDE and MySQL. You can see the project here http://greymane.l3s.uni-hannover.de:8089/DocumentAnalysis/
 
 This project later integrated with main Maven project using SVN and Eclipse IDE.
