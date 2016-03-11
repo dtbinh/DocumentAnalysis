@@ -22,6 +22,7 @@ import org.primefaces.context.RequestContext;
 /**
  *
  * @author Khaled
+ * Save and Delete annotation
  */
 @ManagedBean (name = "annotationBean")
 @SessionScoped
@@ -84,7 +85,7 @@ public class AnnotationBean implements Serializable{
     public void setSelectedText(String selectedText) {
         this.selectedText = selectedText;
     }
-    
+    /*save annotated text*/
     public void saveAnnotation(){
         try{
             HttpSession httpSession = SessionBean.getSession();
@@ -121,6 +122,7 @@ public class AnnotationBean implements Serializable{
             System.out.println("Save Quote Error: "+e);
         }
     }
+    /*delete annotated text*/
      public void deleteAnnotatedText(Annotate annotate){
         AnnotationDao annotatedTextDao = new AnnotationDao();
         annotatedTextDao.deleteAnnotate(annotate.getAnnotateID());
@@ -131,7 +133,7 @@ public class AnnotationBean implements Serializable{
                                 "Deleted Annotated Text",
                                 ""));
     }
-   
+   /* list of annotted info */
     public List<Annotate> getAnnotatedTextList(){
         HttpSession httpSession = SessionBean.getSession();
         AnnotationDao annotatedTextDao = new AnnotationDao();
