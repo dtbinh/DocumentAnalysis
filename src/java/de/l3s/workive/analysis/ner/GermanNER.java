@@ -30,6 +30,7 @@ import org.hibernate.Transaction;
 /**
  *
  * @author Khaled
+ * Class use for German Named Entities recognization
  */
 public class GermanNER {
     private static final Properties props = new Properties();
@@ -45,6 +46,7 @@ public class GermanNER {
         pipeline = new StanfordCoreNLP(props);      
         return pipeline;
     }
+    /* Extract entities (I-ORG: Organization, I-PER:Person, I-LOC:Location, MISC:Others) from sentences */
     public List<Entity> extractEntities(CoreMap sentence) {
         List<Entity> entityList = new ArrayList<Entity>();
 
@@ -97,6 +99,7 @@ public class GermanNER {
         }
         return entityList;
     }
+    /*Save Named Entities with their corresponding sentences, type, pageID e*/
     public void NERAnnotation(List<NER> nerList, StanfordCoreNLP pipeline){
         
         Transaction trns = null;
